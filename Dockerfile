@@ -17,7 +17,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
 # Render and many PaaS platforms expose the port via PORT env var
-ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT:-8080}
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
 
 COPY --from=build /app/publish .
 
