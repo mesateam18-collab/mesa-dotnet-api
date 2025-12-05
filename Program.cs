@@ -12,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Configuration
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.Configure<CloudflareR2Settings>(
+    builder.Configuration.GetSection("CloudflareR2"));
 builder.Services.AddSingleton<MongoDbContext>();
 
 // Repositories
@@ -33,6 +35,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddSingleton<IImageStorageService, R2ImageStorageService>();
 
 // Controllers
 builder.Services.AddControllers();

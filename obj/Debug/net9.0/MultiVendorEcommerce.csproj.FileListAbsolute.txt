@@ -62,3 +62,4 @@
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.S3.dll

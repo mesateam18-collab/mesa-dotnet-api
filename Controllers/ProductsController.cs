@@ -1,6 +1,8 @@
 using System.Security.Claims;
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MultiVendorEcommerce.Models.DTOs;
 using MultiVendorEcommerce.Models.Entities;
 using MultiVendorEcommerce.Services;
 
@@ -9,10 +11,14 @@ namespace MultiVendorEcommerce.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
-public class ProductsController(IProductService productService, IVendorService vendorService) : ControllerBase
+public class ProductsController(
+    IProductService productService,
+    IVendorService vendorService,
+    IImageStorageService imageStorageService) : ControllerBase
 {
     private readonly IProductService _productService = productService;
     private readonly IVendorService _vendorService = vendorService;
+    private readonly IImageStorageService _imageStorageService = imageStorageService;
 
     [HttpGet]
     [AllowAnonymous]
@@ -84,6 +90,82 @@ public class ProductsController(IProductService productService, IVendorService v
             }
 
             product.VendorId = vendor.Id;
+        }
+
+        try
+        {
+            var created = await _productService.CreateAsync(product);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPost("with-images")]
+    [Authorize(Roles = "Vendor,Admin")]
+    [RequestSizeLimit(10_000_000)]
+    public async Task<ActionResult<Product>> CreateWithImages([FromForm] CreateProductWithImagesRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.ProductJson))
+        {
+            return BadRequest("Product payload is required.");
+        }
+
+        Product? product;
+        try
+        {
+            product = JsonSerializer.Deserialize<Product>(request.ProductJson,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        catch (JsonException)
+        {
+            return BadRequest("Invalid product JSON.");
+        }
+
+        if (product is null)
+        {
+            return BadRequest("Product payload is invalid.");
+        }
+
+        // Resolve vendor for current user (Vendor role only)
+        if (User.IsInRole("Vendor"))
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                return Forbid();
+            }
+
+            var vendor = await _vendorService.GetByUserIdAsync(userId);
+            if (vendor is null)
+            {
+                return Forbid("Vendor profile not found for current user");
+            }
+
+            product.VendorId = vendor.Id;
+        }
+
+        // Upload images to R2 (if any) and populate ImageUrls
+        if (request.Files is { Count: > 0 })
+        {
+            foreach (var file in request.Files)
+            {
+                if (file.Length <= 0)
+                {
+                    continue;
+                }
+
+                await using var stream = file.OpenReadStream();
+                var url = await _imageStorageService.UploadAsync(
+                    stream,
+                    file.FileName,
+                    file.ContentType,
+                    HttpContext.RequestAborted);
+
+                product.ImageUrls.Add(url);
+            }
         }
 
         try
