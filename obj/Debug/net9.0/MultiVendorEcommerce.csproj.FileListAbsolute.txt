@@ -55,3 +55,10 @@
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.pdb
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.genruntimeconfig.cache
 /Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/ref/MultiVendorEcommerce.dll
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/web.config
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.Development.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.deps.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
+/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json

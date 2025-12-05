@@ -8,10 +8,12 @@ using MultiVendorEcommerce.Repositories;
 
 namespace MultiVendorEcommerce.Services;
 
+public record AuthResult(string Token, User User);
+
 public interface IAuthService
 {
-    Task<string?> RegisterAsync(User user, string password);
-    Task<string?> LoginAsync(string email, string password);
+    Task<AuthResult?> RegisterAsync(User user, string password);
+    Task<AuthResult?> LoginAsync(string email, string password);
 }
 
 public class AuthService : IAuthService
@@ -25,7 +27,7 @@ public class AuthService : IAuthService
         _configuration = configuration;
     }
 
-    public async Task<string?> RegisterAsync(User user, string password)
+    public async Task<AuthResult?> RegisterAsync(User user, string password)
     {
         var existing = await _userRepository.FindAsync(u => u.Email == user.Email);
         if (existing.Any())
@@ -37,10 +39,11 @@ public class AuthService : IAuthService
         user.CreatedAt = DateTime.UtcNow;
 
         await _userRepository.CreateAsync(user);
-        return GenerateJwtToken(user);
+        var token = GenerateJwtToken(user);
+        return new AuthResult(token, user);
     }
 
-    public async Task<string?> LoginAsync(string email, string password)
+    public async Task<AuthResult?> LoginAsync(string email, string password)
     {
         var users = await _userRepository.FindAsync(u => u.Email == email);
         var user = users.FirstOrDefault();
@@ -54,7 +57,8 @@ public class AuthService : IAuthService
             return null;
         }
 
-        return GenerateJwtToken(user);
+        var token = GenerateJwtToken(user);
+        return new AuthResult(token, user);
     }
 
     private string GenerateJwtToken(User user)
