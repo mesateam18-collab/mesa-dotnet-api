@@ -103,7 +103,11 @@ await DbSeeder.SeedAdminAsync(app.Services);
 // Middleware pipeline
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 
 app.UseAuthentication();
 app.UseAuthorization();
