@@ -108,6 +108,8 @@ if (app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
+app.MapGet("/health", () => "OK");
+
 
 app.UseAuthentication();
 app.UseAuthorization();
