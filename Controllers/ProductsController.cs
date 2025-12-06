@@ -72,41 +72,8 @@ public class ProductsController(
 
     [HttpPost]
     [Authorize(Roles = "Vendor,Admin")]
-    public async Task<ActionResult<Product>> Create(Product product)
-    {
-        // Resolve vendor for current user (Vendor role only)
-        if (User.IsInRole("Vendor"))
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrWhiteSpace(userId))
-            {
-                return Forbid();
-            }
-
-            var vendor = await _vendorService.GetByUserIdAsync(userId);
-            if (vendor is null)
-            {
-                return Forbid("Vendor profile not found for current user");
-            }
-
-            product.VendorId = vendor.Id;
-        }
-
-        try
-        {
-            var created = await _productService.CreateAsync(product);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
-
-    [HttpPost("with-images")]
-    [Authorize(Roles = "Vendor,Admin")]
     [RequestSizeLimit(10_000_000)]
-    public async Task<ActionResult<Product>> CreateWithImages([FromForm] CreateProductWithImagesRequest request)
+    public async Task<ActionResult<Product>> Create([FromForm] CreateProductWithImagesRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.ProductJson))
         {
@@ -181,13 +148,35 @@ public class ProductsController(
 
     [HttpPut("{id}")]
     [Authorize(Roles = "Vendor,Admin")]
-    public async Task<IActionResult> Update(string id, Product product)
+    [RequestSizeLimit(10_000_000)]
+    public async Task<IActionResult> Update(string id, [FromForm] CreateProductWithImagesRequest request)
     {
-        // Load existing product to enforce ownership
+        if (string.IsNullOrWhiteSpace(request.ProductJson))
+        {
+            return BadRequest("Product payload is required.");
+        }
+
+        // Load existing product to enforce ownership and for merging
         var existing = await _productService.GetByIdAsync(id);
         if (existing is null)
         {
             return NotFound();
+        }
+
+        Product? product;
+        try
+        {
+            product = JsonSerializer.Deserialize<Product>(request.ProductJson,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        catch (JsonException)
+        {
+            return BadRequest("Invalid product JSON.");
+        }
+
+        if (product is null)
+        {
+            return BadRequest("Product payload is invalid.");
         }
 
         // Vendor can only modify own products; Admin can edit any
@@ -214,6 +203,30 @@ public class ProductsController(
             if (string.IsNullOrWhiteSpace(product.VendorId))
             {
                 product.VendorId = existing.VendorId;
+            }
+        }
+
+        // Start with existing image URLs
+        product.ImageUrls = existing.ImageUrls ?? new List<string>();
+
+        // Append any newly uploaded images
+        if (request.Files is { Count: > 0 })
+        {
+            foreach (var file in request.Files)
+            {
+                if (file.Length <= 0)
+                {
+                    continue;
+                }
+
+                await using var stream = file.OpenReadStream();
+                var url = await _imageStorageService.UploadAsync(
+                    stream,
+                    file.FileName,
+                    file.ContentType,
+                    HttpContext.RequestAborted);
+
+                product.ImageUrls.Add(url);
             }
         }
 

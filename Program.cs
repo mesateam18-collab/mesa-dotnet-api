@@ -29,12 +29,15 @@ builder.Services.AddScoped<IRepository<Order>>(sp =>
     new Repository<Order>(sp.GetRequiredService<MongoDbContext>().Orders));
 builder.Services.AddScoped<IProductRepository>(sp =>
     new ProductRepository(sp.GetRequiredService<MongoDbContext>().Products));
+builder.Services.AddScoped<IBlogRepository>(sp =>
+    new BlogRepository(sp.GetRequiredService<MongoDbContext>().Blogs));
 
 // Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddSingleton<IImageStorageService, R2ImageStorageService>();
 
 // Controllers
