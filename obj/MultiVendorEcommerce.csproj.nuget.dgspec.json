@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/MultiVendorEcommerce.csproj": {}
+    "/Users/pave360limited/Documents/exodus/Mesa-complete/MultiVendorEcommerce/MultiVendorEcommerce.csproj": {}
   },
   "projects": {
-    "/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/MultiVendorEcommerce.csproj": {
+    "/Users/pave360limited/Documents/exodus/Mesa-complete/MultiVendorEcommerce/MultiVendorEcommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/MultiVendorEcommerce.csproj",
+        "projectUniqueName": "/Users/pave360limited/Documents/exodus/Mesa-complete/MultiVendorEcommerce/MultiVendorEcommerce.csproj",
         "projectName": "MultiVendorEcommerce",
-        "projectPath": "/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/MultiVendorEcommerce.csproj",
+        "projectPath": "/Users/pave360limited/Documents/exodus/Mesa-complete/MultiVendorEcommerce/MultiVendorEcommerce.csproj",
         "packagesPath": "/Users/pave360limited/.nuget/packages/",
-        "outputPath": "/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/",
+        "outputPath": "/Users/pave360limited/Documents/exodus/Mesa-complete/MultiVendorEcommerce/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pave360limited/.nuget/NuGet/NuGet.Config"
