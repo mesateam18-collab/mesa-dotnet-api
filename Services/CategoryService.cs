@@ -31,26 +31,40 @@ public class CategoryService(IRepository<Category> categoryRepository) : ICatego
 
     public async Task<bool> UpdateAsync(string id, Category category)
     {
-        var existing = await _categoryRepository.GetByIdAsync(id);
-        if (existing is null)
+        try
+        {
+            var existing = await _categoryRepository.GetByIdAsync(id);
+            if (existing is null)
+            {
+                return false;
+            }
+
+            category.Id = id;
+            await _categoryRepository.UpdateAsync(id, category);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        category.Id = id;
-        await _categoryRepository.UpdateAsync(id, category);
-        return true;
     }
 
     public async Task<bool> DeleteAsync(string id)
     {
-        var existing = await _categoryRepository.GetByIdAsync(id);
-        if (existing is null)
+        try
+        {
+            var existing = await _categoryRepository.GetByIdAsync(id);
+            if (existing is null)
+            {
+                return false;
+            }
+
+            await _categoryRepository.DeleteAsync(id);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        await _categoryRepository.DeleteAsync(id);
-        return true;
     }
 }

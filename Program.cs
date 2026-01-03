@@ -31,6 +31,8 @@ builder.Services.AddScoped<IProductRepository>(sp =>
     new ProductRepository(sp.GetRequiredService<MongoDbContext>().Products));
 builder.Services.AddScoped<IBlogRepository>(sp =>
     new BlogRepository(sp.GetRequiredService<MongoDbContext>().Blogs));
+builder.Services.AddScoped<IQuickCheckRepository>(sp =>
+    new QuickCheckRepository(sp.GetRequiredService<MongoDbContext>().QuickChecks));
 
 // Services
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -38,10 +40,29 @@ builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<IQuickCheckService, QuickCheckService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton<IImageStorageService, R2ImageStorageService>();
 
-// Controllers
-builder.Services.AddControllers();
+// Controllers with JSON options
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.WriteIndented = true;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
+
+// CORS - Allow Flutter Web App
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFlutterWeb", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -50,8 +71,17 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Multi-Vendor E-commerce API",
-        Version = "v1"
+        Version = "v1",
+        Description = "API for managing multi-vendor e-commerce platform"
     });
+
+    // Include XML comments
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
+    {
+        c.IncludeXmlComments(xmlPath);
+    }
 
     var jwtSecurityScheme = new OpenApiSecurityScheme
     {
@@ -103,8 +133,17 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Seed initial data (e.g., default admin user)
-await DbSeeder.SeedAdminAsync(app.Services);
+// Check MongoDB connection status (don't crash if not connected)
+var mongoContext = app.Services.GetRequiredService<MongoDbContext>();
+if (!mongoContext.IsConnected)
+{
+    app.Logger.LogWarning("⚠️ Application starting WITHOUT MongoDB connection: {Error}", mongoContext.ConnectionError);
+    app.Logger.LogWarning("⚠️ API endpoints requiring database access will return errors until MongoDB is available");
+}
+else
+{
+    app.Logger.LogInformation("✅ MongoDB connected successfully");
+}
 
 // Middleware pipeline
 app.UseSwagger();
@@ -114,8 +153,20 @@ if (app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
-app.MapGet("/health", () => "OK");
+// Health check with MongoDB status
+app.MapGet("/health", (MongoDbContext db) => new
+{
+    status = "OK",
+    mongoDb = new
+    {
+        connected = db.IsConnected,
+        error = db.ConnectionError
+    },
+    timestamp = DateTime.UtcNow
+});
 
+// Enable CORS
+app.UseCors("AllowFlutterWeb");
 
 app.UseAuthentication();
 app.UseAuthorization();

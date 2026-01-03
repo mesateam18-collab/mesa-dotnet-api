@@ -34,27 +34,41 @@ public class BlogService : IBlogService
 
     public async Task<bool> UpdateAsync(string id, Blog blog)
     {
-        var existing = await _blogRepository.GetByIdAsync(id);
-        if (existing == null)
+        try
+        {
+            var existing = await _blogRepository.GetByIdAsync(id);
+            if (existing == null)
+            {
+                return false;
+            }
+
+            blog.Id = id;
+            blog.UpdatedAt = DateTime.UtcNow;
+            await _blogRepository.UpdateAsync(id, blog);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        blog.Id = id;
-        blog.UpdatedAt = DateTime.UtcNow;
-        await _blogRepository.UpdateAsync(id, blog);
-        return true;
     }
 
     public async Task<bool> DeleteAsync(string id)
     {
-        var existing = await _blogRepository.GetByIdAsync(id);
-        if (existing == null)
+        try
+        {
+            var existing = await _blogRepository.GetByIdAsync(id);
+            if (existing == null)
+            {
+                return false;
+            }
+
+            await _blogRepository.DeleteAsync(id);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        await _blogRepository.DeleteAsync(id);
-        return true;
     }
 }

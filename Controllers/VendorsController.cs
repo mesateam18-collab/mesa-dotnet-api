@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MultiVendorEcommerce.Models.DTOs;
@@ -11,10 +10,11 @@ namespace MultiVendorEcommerce.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
-public class VendorsController(IVendorService vendorService, IImageStorageService imageStorageService) : ControllerBase
+public class VendorsController(IVendorService vendorService, IImageStorageService imageStorageService, IAuthService authService) : ControllerBase
 {
     private readonly IVendorService _vendorService = vendorService;
     private readonly IImageStorageService _imageStorageService = imageStorageService;
+    private readonly IAuthService _authService = authService;
 
     // Admin: list all vendors
     [HttpGet]
@@ -64,26 +64,59 @@ public class VendorsController(IVendorService vendorService, IImageStorageServic
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Vendor>> Create([FromForm] VendorWithBannerRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.VendorJson))
+        if (!ModelState.IsValid)
         {
-            return BadRequest("Vendor payload is required.");
+            return BadRequest(ModelState);
         }
 
-        Vendor? vendor;
-        try
+        string userId;
+
+        // If VendorEmail and VendorPassword are provided, create a new User account automatically
+        if (!string.IsNullOrWhiteSpace(request.VendorEmail) && !string.IsNullOrWhiteSpace(request.VendorPassword))
         {
-            vendor = JsonSerializer.Deserialize<Vendor>(request.VendorJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var newUser = new User
+            {
+                Username = request.BusinessName.Trim(),
+                Email = request.VendorEmail.Trim(),
+                Role = UserRole.Vendor.ToString()
+            };
+
+            var authResult = await _authService.RegisterAsync(newUser, request.VendorPassword);
+            if (authResult == null)
+            {
+                return BadRequest("A user with this email already exists.");
+            }
+
+            userId = authResult.User.Id;
         }
-        catch (JsonException)
+        else if (!string.IsNullOrWhiteSpace(request.UserId))
         {
-            return BadRequest("Invalid vendor JSON.");
+            // Use provided UserId if no email/password provided
+            userId = request.UserId;
+        }
+        else
+        {
+            return BadRequest("Either UserId or VendorEmail and VendorPassword must be provided when creating a vendor.");
         }
 
-        if (vendor is null)
+        var vendor = new Vendor
         {
-            return BadRequest("Vendor payload is invalid.");
-        }
+            Id = string.Empty,
+            UserId = userId,
+            BusinessName = request.BusinessName.Trim(),
+            Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
+            Notice = string.IsNullOrWhiteSpace(request.Notice) ? null : request.Notice.Trim(),
+            Status = string.IsNullOrWhiteSpace(request.Status) ? null : request.Status.Trim(),
+            Phone = string.IsNullOrWhiteSpace(request.Phone) ? null : request.Phone.Trim(),
+            Email = string.IsNullOrWhiteSpace(request.Email) ? null : request.Email.Trim(),
+            location = string.IsNullOrWhiteSpace(request.Location) ? null : request.Location.Trim(),
+            CommissionRate = request.CommissionRate,
+            Rating = request.Rating,
+            IsApproved = request.IsApproved,
+            BannerUrl = null,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        };
 
         // Optional banner upload
         if (request.Banner is { Length: > 0 })
@@ -107,52 +140,59 @@ public class VendorsController(IVendorService vendorService, IImageStorageServic
     [Authorize(Roles = "Vendor,Admin")]
     public async Task<IActionResult> Update(string id, [FromForm] VendorWithBannerRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.VendorJson))
+        if (!ModelState.IsValid)
         {
-            return BadRequest("Vendor payload is required.");
+            return BadRequest(ModelState);
         }
 
-        // Load existing vendor first (for ownership + merging)
         var existing = await _vendorService.GetByIdAsync(id);
         if (existing is null)
         {
             return NotFound();
         }
 
-        Vendor? vendor;
-        try
-        {
-            vendor = JsonSerializer.Deserialize<Vendor>(request.VendorJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-        }
-        catch (JsonException)
-        {
-            return BadRequest("Invalid vendor JSON.");
-        }
-
-        if (vendor is null)
-        {
-            return BadRequest("Vendor payload is invalid.");
-        }
-
         // If vendor role, ensure they only update their own vendor
+        string userId = request.UserId;
         if (User.IsInRole("Vendor"))
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrWhiteSpace(userId))
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(currentUserId))
             {
                 return Forbid();
             }
 
-            var currentVendor = await _vendorService.GetByUserIdAsync(userId);
+            var currentVendor = await _vendorService.GetByUserIdAsync(currentUserId);
             if (currentVendor is null || currentVendor.Id != id)
             {
                 return Forbid();
             }
 
             // Ensure UserId is not changed
-            vendor.UserId = currentVendor.UserId;
+            userId = currentVendor.UserId;
         }
+        else if (User.IsInRole("Admin") && string.IsNullOrWhiteSpace(userId))
+        {
+            return BadRequest("UserId is required when updating a vendor.");
+        }
+
+        var vendor = new Vendor
+        {
+            Id = id,
+            UserId = userId,
+            BusinessName = request.BusinessName.Trim(),
+            Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
+            Notice = string.IsNullOrWhiteSpace(request.Notice) ? null : request.Notice.Trim(),
+            Status = string.IsNullOrWhiteSpace(request.Status) ? null : request.Status.Trim(),
+            Phone = string.IsNullOrWhiteSpace(request.Phone) ? null : request.Phone.Trim(),
+            Email = string.IsNullOrWhiteSpace(request.Email) ? null : request.Email.Trim(),
+            location = string.IsNullOrWhiteSpace(request.Location) ? null : request.Location.Trim(),
+            CommissionRate = request.CommissionRate,
+            Rating = request.Rating,
+            IsApproved = request.IsApproved,
+            BannerUrl = existing.BannerUrl,
+            CreatedAt = existing.CreatedAt,
+            UpdatedAt = DateTime.UtcNow
+        };
 
         // Optional banner upload (overwrites existing BannerUrl if provided)
         if (request.Banner is { Length: > 0 })
@@ -165,11 +205,6 @@ public class VendorsController(IVendorService vendorService, IImageStorageServic
                 HttpContext.RequestAborted);
 
             vendor.BannerUrl = url;
-        }
-        else
-        {
-            // Preserve existing banner if none provided
-            vendor.BannerUrl = existing.BannerUrl;
         }
 
         var ok = await _vendorService.UpdateAsync(id, vendor);

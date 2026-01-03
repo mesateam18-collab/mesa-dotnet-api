@@ -49,29 +49,43 @@ public class ProductService : IProductService
 
     public async Task<bool> UpdateAsync(string id, Product product)
     {
-        var existing = await _productRepository.GetByIdAsync(id);
-        if (existing == null)
+        try
+        {
+            var existing = await _productRepository.GetByIdAsync(id);
+            if (existing == null)
+            {
+                return false;
+            }
+
+            product.Id = id;
+            product.UpdatedAt = DateTime.UtcNow;
+            await ValidateCategoriesAsync(product);
+            await _productRepository.UpdateAsync(id, product);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        product.Id = id;
-        product.UpdatedAt = DateTime.UtcNow;
-        await ValidateCategoriesAsync(product);
-        await _productRepository.UpdateAsync(id, product);
-        return true;
     }
 
     public async Task<bool> DeleteAsync(string id)
     {
-        var existing = await _productRepository.GetByIdAsync(id);
-        if (existing == null)
+        try
+        {
+            var existing = await _productRepository.GetByIdAsync(id);
+            if (existing == null)
+            {
+                return false;
+            }
+
+            await _productRepository.DeleteAsync(id);
+            return true;
+        }
+        catch (Exception)
         {
             return false;
         }
-
-        await _productRepository.DeleteAsync(id);
-        return true;
     }
 
     private async Task ValidateCategoriesAsync(Product product)

@@ -1,65 +1,201 @@
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.Development.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.staticwebassets.endpoints.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.deps.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.runtimeconfig.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.pdb
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.Core.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.SecurityToken.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/BCrypt.Net-Next.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/DnsClient.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.OpenApi.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Bson.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.Core.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Libmongocrypt.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/SharpCompress.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Snappier.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/ZstdSharp.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/linux/native/libmongocrypt.so
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/osx/native/libmongocrypt.dylib
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/win/native/mongocrypt.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.AssemblyReference.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/rpswa.dswa.cache.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.GeneratedMSBuildEditorConfig.editorconfig
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfoInputs.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfo.cs
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.CoreCompileInputs.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cs
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/rjimswa.dswa.cache.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/scopedcss/bundle/MultiVendorEcommerce.styles.css
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.development.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.endpoints.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVen.2308DB46.Up2Date
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/refint/MultiVendorEcommerce.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.pdb
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.genruntimeconfig.cache
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/ref/MultiVendorEcommerce.dll
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/web.config
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.Development.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.deps.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json
-/Users/pave360limited/CascadeProjects/windsurf-project/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.S3.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/web.config
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.Development.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.Development.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.deps.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.staticwebassets.endpoints.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.exe
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.deps.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.runtimeconfig.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.pdb
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.Core.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.S3.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.SecurityToken.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/BCrypt.Net-Next.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/DnsClient.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.OpenApi.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Bson.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.Core.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Libmongocrypt.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/SharpCompress.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Snappier.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/ZstdSharp.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/linux/native/libmongocrypt.so
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/osx/native/libmongocrypt.dylib
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/win/native/mongocrypt.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.AssemblyReference.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rpswa.dswa.cache.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfoInputs.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfo.cs
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.CoreCompileInputs.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjimswa.dswa.cache.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/scopedcss/bundle/MultiVendorEcommerce.styles.css
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.development.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVen.2308DB46.Up2Date
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/refint/MultiVendorEcommerce.dll
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.pdb
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.genruntimeconfig.cache
+C:/Users/AAbubaka/OneDrive - Heidelberg Materials/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/ref/MultiVendorEcommerce.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/web.config
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.Development.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.Development.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.deps.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.staticwebassets.endpoints.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.deps.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.runtimeconfig.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.pdb
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.Core.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.S3.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.SecurityToken.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/DnsClient.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Bson.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.Core.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Libmongocrypt.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/SharpCompress.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Snappier.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/ZstdSharp.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/linux/native/libmongocrypt.so
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/win/native/mongocrypt.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.AssemblyReference.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rpswa.dswa.cache.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfoInputs.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfo.cs
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.CoreCompileInputs.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cs
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjimswa.dswa.cache.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/scopedcss/bundle/MultiVendorEcommerce.styles.css
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.development.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVen.2308DB46.Up2Date
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/refint/MultiVendorEcommerce.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.pdb
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.genruntimeconfig.cache
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/ref/MultiVendorEcommerce.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/CloudinaryDotNet.dll
+/Users/pave360limited/Downloads/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/web.config
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.Development.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/appsettings.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.Development.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/appsettings.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.deps.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.runtimeconfig.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/out/MultiVendorEcommerce.staticwebassets.endpoints.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.staticwebassets.endpoints.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.deps.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.runtimeconfig.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.pdb
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MultiVendorEcommerce.xml
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.Core.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.S3.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/AWSSDK.SecurityToken.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/CloudinaryDotNet.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/DnsClient.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Bson.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Driver.Core.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/MongoDB.Libmongocrypt.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/SharpCompress.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Snappier.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/ZstdSharp.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/linux/native/libmongocrypt.so
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/bin/Debug/net9.0/runtimes/win/native/mongocrypt.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.AssemblyReference.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rpswa.dswa.cache.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfoInputs.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.AssemblyInfo.cs
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.csproj.CoreCompileInputs.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cs
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.MvcApplicationPartsAssemblyInfo.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.sourcelink.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjimswa.dswa.cache.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/scopedcss/bundle/MultiVendorEcommerce.styles.css
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.json.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.development.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVen.2308DB46.Up2Date
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/refint/MultiVendorEcommerce.dll
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.xml
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.pdb
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/MultiVendorEcommerce.genruntimeconfig.cache
+/Users/pave360limited/Documents/Mesa-complete/MultiVendorEcommerce/obj/Debug/net9.0/ref/MultiVendorEcommerce.dll

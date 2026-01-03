@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MultiVendorEcommerce.Models.DTOs;
@@ -75,28 +74,13 @@ public class ProductsController(
     [RequestSizeLimit(10_000_000)]
     public async Task<ActionResult<Product>> Create([FromForm] CreateProductWithImagesRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.ProductJson))
+        if (!ModelState.IsValid)
         {
-            return BadRequest("Product payload is required.");
+            return BadRequest(ModelState);
         }
 
-        Product? product;
-        try
-        {
-            product = JsonSerializer.Deserialize<Product>(request.ProductJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-        }
-        catch (JsonException)
-        {
-            return BadRequest("Invalid product JSON.");
-        }
-
-        if (product is null)
-        {
-            return BadRequest("Product payload is invalid.");
-        }
-
-        // Resolve vendor for current user (Vendor role only)
+        // Resolve vendor
+        string? vendorId = request.VendorId;
         if (User.IsInRole("Vendor"))
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -110,19 +94,39 @@ public class ProductsController(
             {
                 return Forbid("Vendor profile not found for current user");
             }
-
-            product.VendorId = vendor.Id;
+            vendorId = vendor.Id;
+        }
+        else if (User.IsInRole("Admin"))
+        {
+            if (string.IsNullOrWhiteSpace(vendorId))
+            {
+                return BadRequest("VendorId is required for Admin when creating a product.");
+            }
         }
 
-        // Upload images to R2 (if any) and populate ImageUrls
+        var product = new Product
+        {
+            Id = string.Empty,
+            VendorId = vendorId ?? string.Empty,
+            Name = request.Name.Trim(),
+            Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
+            Price = request.Price,
+            SalesPrice = request.SalesPrice,
+            StockQuantity = request.StockQuantity,
+            stockStatus = request.StockStatus,
+            ImageUrls = new List<string>(),
+            Categories = ParseCategories(request.CategoriesCsv),
+            Attributes = request.Attributes ?? new Dictionary<string, string>(),
+            IsActive = true,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        // Upload images
         if (request.Files is { Count: > 0 })
         {
             foreach (var file in request.Files)
             {
-                if (file.Length <= 0)
-                {
-                    continue;
-                }
+                if (file.Length <= 0) continue;
 
                 await using var stream = file.OpenReadStream();
                 var url = await _imageStorageService.UploadAsync(
@@ -151,9 +155,9 @@ public class ProductsController(
     [RequestSizeLimit(10_000_000)]
     public async Task<IActionResult> Update(string id, [FromForm] CreateProductWithImagesRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.ProductJson))
+        if (!ModelState.IsValid)
         {
-            return BadRequest("Product payload is required.");
+            return BadRequest(ModelState);
         }
 
         // Load existing product to enforce ownership and for merging
@@ -163,23 +167,8 @@ public class ProductsController(
             return NotFound();
         }
 
-        Product? product;
-        try
-        {
-            product = JsonSerializer.Deserialize<Product>(request.ProductJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-        }
-        catch (JsonException)
-        {
-            return BadRequest("Invalid product JSON.");
-        }
-
-        if (product is null)
-        {
-            return BadRequest("Product payload is invalid.");
-        }
-
         // Vendor can only modify own products; Admin can edit any
+        string vendorId = existing.VendorId;
         if (User.IsInRole("Vendor"))
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -194,20 +183,30 @@ public class ProductsController(
                 return Forbid();
             }
 
-            // Ensure VendorId cannot be changed by the body
-            product.VendorId = vendor.Id;
+            vendorId = vendor.Id;
         }
-        else if (User.IsInRole("Admin"))
+        else if (User.IsInRole("Admin") && !string.IsNullOrWhiteSpace(request.VendorId))
         {
-            // Admin can choose to leave VendorId as-is if not set in body
-            if (string.IsNullOrWhiteSpace(product.VendorId))
-            {
-                product.VendorId = existing.VendorId;
-            }
+            vendorId = request.VendorId!;
         }
 
-        // Start with existing image URLs
-        product.ImageUrls = existing.ImageUrls ?? new List<string>();
+        var product = new Product
+        {
+            Id = id,
+            VendorId = vendorId,
+            Name = request.Name.Trim(),
+            Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
+            Price = request.Price,
+            SalesPrice = request.SalesPrice,
+            StockQuantity = request.StockQuantity,
+            stockStatus = request.StockStatus,
+            ImageUrls = existing.ImageUrls ?? new List<string>(),
+            Categories = ParseCategories(request.CategoriesCsv),
+            Attributes = request.Attributes ?? existing.Attributes ?? new Dictionary<string, string>(),
+            IsActive = existing.IsActive,
+            CreatedAt = existing.CreatedAt,
+            UpdatedAt = DateTime.UtcNow
+        };
 
         // Append any newly uploaded images
         if (request.Files is { Count: > 0 })
@@ -279,5 +278,14 @@ public class ProductsController(
         }
 
         return NoContent();
+    }
+
+    private static List<string> ParseCategories(string? categoriesCsv)
+    {
+        if (string.IsNullOrWhiteSpace(categoriesCsv)) return new List<string>();
+        return categoriesCsv
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Where(c => !string.IsNullOrWhiteSpace(c))
+            .ToList();
     }
 }
