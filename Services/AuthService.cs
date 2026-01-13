@@ -16,20 +16,12 @@ public interface IAuthService
     Task<AuthResult?> LoginAsync(string email, string password);
 }
 
-public class AuthService : IAuthService
+public class AuthService(IRepository<User> userRepository, IConfiguration configuration)
+    : IAuthService
 {
-    private readonly IRepository<User> _userRepository;
-    private readonly IConfiguration _configuration;
-
-    public AuthService(IRepository<User> userRepository, IConfiguration configuration)
-    {
-        _userRepository = userRepository;
-        _configuration = configuration;
-    }
-
     public async Task<AuthResult?> RegisterAsync(User user, string password)
     {
-        var existing = await _userRepository.FindAsync(u => u.Email == user.Email);
+        var existing = await userRepository.FindAsync(u => u.Email == user.Email);
         if (existing.Any())
         {
             return null;
@@ -38,14 +30,14 @@ public class AuthService : IAuthService
         user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
         user.CreatedAt = DateTime.UtcNow;
 
-        await _userRepository.CreateAsync(user);
+        await userRepository.CreateAsync(user);
         var token = GenerateJwtToken(user);
         return new AuthResult(token, user);
     }
 
     public async Task<AuthResult?> LoginAsync(string email, string password)
     {
-        var users = await _userRepository.FindAsync(u => u.Email == email);
+        var users = await userRepository.FindAsync(u => u.Email == email);
         var user = users.FirstOrDefault();
         if (user == null)
         {
@@ -63,7 +55,7 @@ public class AuthService : IAuthService
 
     private string GenerateJwtToken(User user)
     {
-        var jwtSection = _configuration.GetSection("Jwt");
+        var jwtSection = configuration.GetSection("Jwt");
         var key = Encoding.ASCII.GetBytes(jwtSection["Key"]!);
 
         var claims = new List<Claim>

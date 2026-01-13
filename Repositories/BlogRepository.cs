@@ -7,9 +7,4 @@ public interface IBlogRepository : IRepository<Blog>
 {
 }
 
-public class BlogRepository : Repository<Blog>, IBlogRepository
-{
-    public BlogRepository(IMongoCollection<Blog> collection) : base(collection)
-    {
-    }
-}
+public class BlogRepository(IMongoCollection<Blog> collection) : Repository<Blog>(collection), IBlogRepository;

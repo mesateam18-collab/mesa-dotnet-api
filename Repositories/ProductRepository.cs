@@ -10,12 +10,9 @@ public interface IProductRepository : IRepository<Product>
     Task<IEnumerable<Product>> SearchAsync(string searchTerm);
 }
 
-public class ProductRepository : Repository<Product>, IProductRepository
+public class ProductRepository(IMongoCollection<Product> collection)
+    : Repository<Product>(collection), IProductRepository
 {
-    public ProductRepository(IMongoCollection<Product> collection) : base(collection)
-    {
-    }
-
     public async Task<IEnumerable<Product>> GetByVendorAsync(string vendorId)
     {
         return await Collection.Find(p => p.VendorId == vendorId).ToListAsync();

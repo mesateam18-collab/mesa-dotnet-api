@@ -15,15 +15,11 @@ public interface IRepository<T> where T : class
     Task DeleteAsync(string id);
 }
 
-public class Repository<T> : IRepository<T> where T : class
+public class Repository<T>(IMongoCollection<T> collection) : IRepository<T>
+    where T : class
 {
-    protected readonly IMongoCollection<T> Collection;
+    protected readonly IMongoCollection<T> Collection = collection;
     private static readonly PropertyInfo? IdProperty = typeof(T).GetProperty("Id");
-
-    public Repository(IMongoCollection<T> collection)
-    {
-        Collection = collection;
-    }
 
     public async Task<IEnumerable<T>> GetAllAsync() =>
         await Collection.Find(_ => true).ToListAsync();
